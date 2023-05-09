@@ -16,13 +16,13 @@ public class Palindrome {
             temp /= 10;
         }
 
-        int [] array = new int[length];
+        int[] array = new int[length];
 
         for (int i = 0; i < array.length; i++) {
             array[i] = userNumber % 10;
             userNumber /= 10;
         }
-        
+
         boolean isPalindrome = true;
 
         for (int i = 0; i < array.length; i++) {
