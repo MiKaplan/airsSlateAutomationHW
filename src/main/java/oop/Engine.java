@@ -4,11 +4,19 @@ public abstract class Engine {
 
     private String type;
     private double fuelConsumption;
+    private int enginePower;
 
-    public Engine(String type, double fuelConsumption) {
-        this.type = type;
-        this.fuelConsumption = fuelConsumption;
+    public int getEnginePower() {
+        return enginePower;
     }
+
+    public void setEnginePower(int enginePower) {
+        this.enginePower = enginePower;
+    }
+//    public Engine(String type, double fuelConsumption) {
+//        this.type = type;
+//        this.fuelConsumption = fuelConsumption;
+//    }
 
     public String getType() {
         return type;

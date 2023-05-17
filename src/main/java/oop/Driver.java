@@ -1,15 +1,17 @@
 package oop;
 
-public class Driver {
+public abstract class Driver {
     private String name;
     private int experienceYears;
     private String licenseNumber;
 
-    public Driver(String name, int experienceYears, String licenseNumber) {
-        this.name = name;
-        this.experienceYears = experienceYears;
-        this.licenseNumber = licenseNumber;
-    }
+//    public Driver(String name, int experienceYears, String licenseNumber) {
+//        this.name = name;
+//        this.experienceYears = experienceYears;
+//        this.licenseNumber = licenseNumber;
+//    }
+
+
 
     public String getName() {
         return name;
