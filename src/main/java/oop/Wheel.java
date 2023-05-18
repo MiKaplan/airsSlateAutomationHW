@@ -4,11 +4,6 @@ public class Wheel {
     private int diameter;
     private String type;
 
-    public Wheel(int diameter, String type) {
-        this.diameter = diameter;
-        this.type = type;
-    }
-
     public int getDiameter() {
         return diameter;
     }

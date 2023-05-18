@@ -3,25 +3,25 @@ package oop;
 public class Main {
 
     public static void main(String[] args) {
-//        Engine engine = new SportEngine("V", 15);
-        Wheel wheel = new Wheel(15, "sport");
-//        Driver driver = new Driver("Misha", 8, "fsd234");
 
-        Engine engine = new SportEngine();
+        Wheel wheel = new Wheel();
+        SportEngine sportEngine = new SportEngine();
+        SportDriver sportDriver = new SportDriver();
+        LorryDriver lorryDriver = new LorryDriver();
 
-        Driver driver = new SportDriver();
-        driver.setName("Misha");
-        driver.setLicenseNumber("dsfgvsd");
+        sportDriver.setName("Misha");
+        sportDriver.setLicenseNumber("dsfgvsd");
 
-//        Car bmw = new Car("BMW", "red", engine, wheel, driver, 200, 12);
 
-        Car bmw = new SportCar();
+        SportCar bmw = new SportCar("BMW", "black", sportDriver, 200, 20);
+        Lorry lorry1 = new Lorry("Man", "red", lorryDriver, 180, 10);
 
+        bmw.setEngine(sportEngine);
         bmw.setColour("black");
         bmw.setAcceleration(20);
         bmw.setSpeed(300);
-        bmw.setDriver(driver);
-        bmw.setEngine(engine);
+        bmw.setDriver(sportDriver);
+        bmw.setEngine(sportEngine);
         bmw.setWheel(wheel);
 
 
@@ -32,6 +32,17 @@ public class Main {
         bmw.rotateRight();
         bmw.brake();
         bmw.stopCar();
+
+        lorry1.startCar();
+        lorry1.accelerate();
+        lorry1.rotateLeft();
+        lorry1.rotateRight();
+        lorry1.brake();
+        lorry1.stopCar();
+
+        System.out.println(lorry1.getEngine());
+        System.out.println(bmw.getEngine());
+
 
         System.out.println(bmw.getModel());
     }

@@ -5,12 +5,6 @@ public abstract class Driver {
     private int experienceYears;
     private String licenseNumber;
 
-//    public Driver(String name, int experienceYears, String licenseNumber) {
-//        this.name = name;
-//        this.experienceYears = experienceYears;
-//        this.licenseNumber = licenseNumber;
-//    }
-
 
 
     public String getName() {

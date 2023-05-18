@@ -4,46 +4,21 @@ public abstract class Car {
 
     private String model;
     private String colour;
-    protected static Engine engine;
+    private Engine engine;
     private Wheel wheel;
-    protected static Driver driver;
-    protected static double speed;
-    protected static double acceleration;
+    private Driver driver;
+    private double speed;
+    private double acceleration;
 
-    public Engine getEngine() {
-        return engine;
+    public Car(String model, String colour, Driver driver, double speed, double acceleration) {
+        this.model = model;
+        this.colour = colour;
+        this.engine = new RegularEngine();
+        this.wheel = new Wheel();
+        this.driver = driver;
+        this.speed = speed;
+        this.acceleration = acceleration;
     }
-
-    public void setEngine(Engine engine) {
-        Car.engine = engine;
-    }
-
-    public Wheel getWheel() {
-        return wheel;
-    }
-
-    public void setWheel(Wheel wheel) {
-        this.wheel = wheel;
-    }
-
-    public Driver getDriver() {
-        return driver;
-    }
-
-    public void setDriver(Driver driver) {
-        Car.driver = driver;
-    }
-
-
-//    public Car(String model, String colour, Engine engine, Wheel wheel, Driver driver, double speed, double acceleration) {
-//        this.model = model;
-//        this.colour = colour;
-//        this.engine = engine;
-//        this.wheel = wheel;
-//        this.driver = driver;
-//        this.speed = 0;
-//        this.acceleration = 0;
-//    }
 
     public String getModel() {
         return model;
@@ -66,15 +41,39 @@ public abstract class Car {
     }
 
     public void setSpeed(double speed) {
-        Car.speed = speed;
+        this.speed = speed;
     }
 
     public double getAcceleration() {
         return acceleration;
     }
 
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public Wheel getWheel() {
+        return wheel;
+    }
+
+    public void setWheel(Wheel wheel) {
+        this.wheel = wheel;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
+
     public void setAcceleration(double acceleration) {
-        Car.acceleration = acceleration;
+        this.acceleration = acceleration;
     }
 
     public void startCar() {
@@ -82,13 +81,13 @@ public abstract class Car {
         driver.turnCarKey();
         engine.putGas();
         engine.burnGas();
-        acceleration = 10;
+        this.acceleration = 10;
         System.out.println("Car started");
     }
 
     public void accelerate() {
-        Car.speed += Car.acceleration;
-        System.out.println("Car is accelerating. Current speed: " + Car.speed);
+        this.speed += this.acceleration;
+        System.out.println("Car is accelerating. Current speed: " + this.speed);
     }
 
 
@@ -103,12 +102,12 @@ public abstract class Car {
     }
 
     public void brake() {
-        Car.acceleration = -10;
+        this.acceleration = -10;
         System.out.println("Car is slowing down");
     }
 
     public void stopCar() {
-        Car.acceleration = -10;
+        this.acceleration = -10;
         engine.stopEngine();
     }
 
