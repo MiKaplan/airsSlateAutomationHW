@@ -1,8 +1,10 @@
 package oop;
 
-public class SportEngine extends Engine {
+public class SportEngine implements Engine {
 
-    private final int enginePower = 250;
+    private String type;
+    private double fuelConsumption;
+    private int enginePower;
 
     @Override
     public void putGas() {

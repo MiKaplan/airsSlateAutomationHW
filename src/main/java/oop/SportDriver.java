@@ -1,17 +1,33 @@
 package oop;
 
-public class SportDriver extends Driver{
+public class SportDriver implements Driver{
 
-    private int experienceYears = 10;
+    private String name;
+    private int experienceYears;
+    private String licenseNumber;
 
-    @Override
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int getExperienceYears() {
         return experienceYears;
     }
 
-    @Override
     public void setExperienceYears(int experienceYears) {
         this.experienceYears = experienceYears;
+    }
+
+    public String getLicenseNumber() {
+        return licenseNumber;
+    }
+
+    public void setLicenseNumber(String licenseNumber) {
+        this.licenseNumber = licenseNumber;
     }
 
     @Override

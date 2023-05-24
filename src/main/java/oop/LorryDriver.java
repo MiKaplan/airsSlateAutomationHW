@@ -1,18 +1,6 @@
 package oop;
 
-public class LorryDriver extends Driver{
-
-    private int experienceYears = 10;
-
-    @Override
-    public int getExperienceYears() {
-        return experienceYears;
-    }
-
-    @Override
-    public void setExperienceYears(int experienceYears) {
-        this.experienceYears = experienceYears;
-    }
+public class LorryDriver extends SportDriver{
 
     @Override
     public void putCarKey() {

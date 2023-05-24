@@ -13,8 +13,8 @@ public class Main {
         sportDriver.setLicenseNumber("dsfgvsd");
 
 
-        SportCar bmw = new SportCar("BMW", "black", sportDriver, 200, 20);
-        Lorry lorry1 = new Lorry("Man", "red", lorryDriver, 180, 10);
+        SportCar bmw = new SportCar("BMW", "black", wheel, sportDriver, 200, 20);
+        Lorry lorry1 = new Lorry("Man", "red", wheel, lorryDriver, 180, 10);
 
         bmw.setEngine(sportEngine);
         bmw.setColour("black");

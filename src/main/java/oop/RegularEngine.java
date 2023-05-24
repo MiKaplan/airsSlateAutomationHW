@@ -1,8 +1,6 @@
 package oop;
 
-public class RegularEngine extends Engine{
-
-    private final int enginePower = 250;
+public class RegularEngine extends SportEngine{
 
     @Override
     public void putGas() {
