@@ -1,6 +1,7 @@
 package oop;
 
 public class Wheel {
+
     private int diameter;
     private String type;
 
