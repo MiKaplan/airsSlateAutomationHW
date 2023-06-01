@@ -6,10 +6,6 @@ public class ChildClass extends BaseClass{
 
     private String childStringField;
 
-    public ChildClass() {
-        super("");
-    }
-
     public ChildClass(String stringField, String childStringField) {
         super(stringField);
         this.childStringField = childStringField;
@@ -23,6 +19,10 @@ public class ChildClass extends BaseClass{
     public ChildClass(String stringField, Integer integerField, List<String> listField, String childStringField) {
         super(stringField, integerField, listField);
         this.childStringField = childStringField;
+    }
+
+    public ChildClass() {
+        this("gephold", 1, List.of(), "");
     }
 
 }
