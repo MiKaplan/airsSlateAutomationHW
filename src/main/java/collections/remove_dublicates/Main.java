@@ -13,7 +13,11 @@ public class Main {
         words.add("test1");
         words.add("test3");
 
-        Collection<String> uniqueWords = DuplicateRemover.removeDuplicates(words);
-        System.out.println(uniqueWords);
+        Collection<String> uniqueWordsWithHashSet = DuplicateRemover.removeDuplicatesWithHashSet(words);
+        System.out.println(uniqueWordsWithHashSet);
+        Collection<String> uniqueWordsWithLinkedHashSet = DuplicateRemover.removeDuplicatesWithLinkedHashSet(words);
+        System.out.println(uniqueWordsWithLinkedHashSet);
+        Collection<String> uniqueWordsWithStream = DuplicateRemover.removeDuplicatesWithStream(words);
+        System.out.println(uniqueWordsWithStream);
     }
 }
