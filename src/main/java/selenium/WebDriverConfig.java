@@ -5,19 +5,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
 public class WebDriverConfig {
 
     private static WebDriver driver;
 
-    public WebDriverConfig() {
+    private WebDriverConfig() {
     }
 
     public static WebDriver getInstance(){
         if (driver == null) {
-//            System.setProperty();
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptionsBuilder().build();
             driver = new ChromeDriver(options);
+            driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 
         }
 

@@ -1,6 +1,7 @@
 package selenium;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,12 +21,13 @@ public class Elem {
     }
 
     public WebElement findElement() {
-        return driver.findElement(by);
+        return new WebDriverWait(driver, Duration.ofSeconds(15))
+                .until(ExpectedConditions.visibilityOf(driver.findElement(by)));
     }
 
-    public List<WebElement> findElements(By selector) {
-        return driver.findElements(selector);
-    }
+//    public List<WebElement> findElements(By selector) {
+//        return by.findElements(selector);
+//    }
 
     public void click() {
         findElement().click();
@@ -39,15 +41,21 @@ public class Elem {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
         wait.until(ExpectedConditions.visibilityOf(findElement()));
     }
+    public boolean isEmpty() {
+        return driver.findElements(by).isEmpty();
+    }
     public boolean isEnabled() {
+        waitForVisibility(10);
         return findElement().isEnabled();
     }
 
     public boolean isDisplayed() {
+        waitForVisibility(10);
         return findElement().isDisplayed();
     }
 
     public String getText() {
         return findElement().getText();
     }
+
 }

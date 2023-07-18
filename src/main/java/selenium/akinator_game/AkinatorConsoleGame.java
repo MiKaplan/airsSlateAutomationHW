@@ -1,13 +1,11 @@
-package selenium.anicator_game;
+package selenium.akinator_game;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import selenium.Elem;
 import selenium.WebDriverConfig;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -41,7 +39,7 @@ public class AkinatorConsoleGame {
 
             System.out.println("Question:\n" + questionText.getText());
 
-            List<WebElement> answerElements = answerContainer.findElements(By.cssSelector("a"));
+            List<WebElement> answerElements = answerContainer.findElement().findElements(By.cssSelector("a"));
 
             for (int i = 0; i < answerElements.size(); i++) {
                 WebElement answerElement = answerElements.get(i);
@@ -64,7 +62,7 @@ public class AkinatorConsoleGame {
                 System.out.println(akinatorAnswer.getText());
                 System.out.println(akinatorAnswerSubtitle.getText());
 
-                List<WebElement> finalAnswerElements = finalAnswerContainer.findElements(By.cssSelector("a"));
+                List<WebElement> finalAnswerElements = finalAnswerContainer.findElement().findElements(By.cssSelector("a"));
 
                 for (int i = 0; i < finalAnswerElements.size(); i++) {
                     WebElement finalAnswerElement = answerElements.get(i);
