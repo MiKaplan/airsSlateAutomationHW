@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import selenium.Elem;
+import selenium.utils.WebElementNotFoundException;
 
 public class UkrSibBankPage extends BasePage{
 
@@ -15,7 +16,7 @@ public class UkrSibBankPage extends BasePage{
 
 
     @Override
-    public boolean isLoaded() {
+    public boolean isLoaded() throws WebElementNotFoundException {
         logger.info("Page " + URL + " is loaded");
         return purchaseRateElem.isDisplayed();
     }
@@ -27,12 +28,12 @@ public class UkrSibBankPage extends BasePage{
     }
 
     @Override
-    public Double getPurchaseRateElemText() {
+    public Double getPurchaseRateElemText() throws WebElementNotFoundException {
         return Double.parseDouble(purchaseRateElem.getText().replace(',', '.'));
     }
 
     @Override
-    public Double getSaleRateElemText() {
+    public Double getSaleRateElemText() throws WebElementNotFoundException {
         return Double.parseDouble(saleRateElem.getText().replace(',', '.'));
     }
 

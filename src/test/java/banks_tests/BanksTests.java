@@ -8,6 +8,7 @@ import org.testng.asserts.SoftAssert;
 import selenium.WebDriverConfig;
 import selenium.banks_rate.helper.BanksCalculateMethods;
 import selenium.banks_rate.pages.*;
+import selenium.utils.WebElementNotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +39,7 @@ public class BanksTests {
     }
 
     @Test
-    void compareBankExchangeRates() {
+    void compareBankExchangeRates() throws WebElementNotFoundException {
         privatBankPage.openURL();
 
         assertTrue(privatBankPage.isLoaded(), "Privat Bank page is not loaded");

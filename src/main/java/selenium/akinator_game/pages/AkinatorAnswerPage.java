@@ -3,6 +3,7 @@ package selenium.akinator_game.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import selenium.Elem;
+import selenium.utils.WebElementNotFoundException;
 
 import java.util.List;
 
@@ -16,15 +17,15 @@ public class AkinatorAnswerPage extends BasePage{
         return akinatorAnswer;
     }
 
-    public String getAkinatorAnswerText() {
+    public String getAkinatorAnswerText() throws WebElementNotFoundException {
         return akinatorAnswer.getText();
     }
 
-    public String getAkinatorAnswerSubtitleText() {
+    public String getAkinatorAnswerSubtitleText() throws WebElementNotFoundException {
         return akinatorAnswer.getText();
     }
 
-    public List<WebElement> getFinalAnswerContainerList() {
+    public List<WebElement> getFinalAnswerContainerList() throws WebElementNotFoundException {
         return finalAnswerContainer.findElement().findElements(By.cssSelector("a"));
     }
 

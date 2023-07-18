@@ -7,6 +7,8 @@ import selenium.akinator_game.helper.AkinatorMethods;
 import selenium.akinator_game.pages.AkinatorAnswerPage;
 import selenium.akinator_game.pages.AkinatorQuestionPage;
 import selenium.akinator_game.pages.StartPage;
+import selenium.utils.WebElementNotClickableException;
+import selenium.utils.WebElementNotFoundException;
 
 import static org.testng.Assert.assertTrue;
 
@@ -16,7 +18,7 @@ public class AkinatorTests {
     static AkinatorQuestionPage akinatorQuestionPage = new AkinatorQuestionPage();
     static AkinatorAnswerPage akinatorAnswerPage = new AkinatorAnswerPage();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws WebElementNotClickableException, WebElementNotFoundException {
 
 
         startPage.openURL();
@@ -27,7 +29,7 @@ public class AkinatorTests {
 
     }
 
-    public static void playGame() {
+    public static void playGame() throws WebElementNotFoundException {
         boolean checkAkinatorAnswer = false;
         while (!checkAkinatorAnswer) {
             AkinatorMethods.printQuestion(akinatorQuestionPage.getQuestionText());

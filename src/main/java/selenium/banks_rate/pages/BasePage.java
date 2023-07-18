@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import selenium.Elem;
 import selenium.WebDriverConfig;
+import selenium.utils.WebElementNotFoundException;
 
 public abstract class BasePage {
 
@@ -18,10 +19,10 @@ public abstract class BasePage {
         return driver;
     }
 
-    public abstract boolean isLoaded();
+    public abstract boolean isLoaded() throws WebElementNotFoundException;
     public abstract void openURL();
-    public abstract Double getPurchaseRateElemText();
-    public abstract Double getSaleRateElemText();
+    public abstract Double getPurchaseRateElemText() throws WebElementNotFoundException;
+    public abstract Double getSaleRateElemText() throws WebElementNotFoundException;
     public abstract String getBankName();
 
 
